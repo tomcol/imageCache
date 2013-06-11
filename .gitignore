@@ -1,0 +1,11 @@
+*.class
+
+# Package Files #
+*.svn
+*.war
+*.ear
+*.settings
+*.classpath
+*.project
+*.DS_Store
+Thumbs.db
