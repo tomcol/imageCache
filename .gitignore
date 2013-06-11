@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 slir-error-log
 
 cache/rendered/*
@@ -16,5 +16,5 @@ cache/rendered/*
 *.project
 *.DS_Store
 Thumbs.db
->>>>>>> 24c33bd34614ec3b72cb65bd739d6a7de6df44d1
+
 
