@@ -1,0 +1,5 @@
+slir-error-log
+
+cache/rendered/*
+
+.DS_Store
