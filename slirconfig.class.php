@@ -42,7 +42,7 @@ class SLIRConfig extends SLIRConfigDefaults
     parent::init();
   }
   
-  public static $documentRoot = "/home/staging/public_html/seldex-images";
+  public static $documentRoot = "/home/PATH/TO/ROOT";
   
 }
 
