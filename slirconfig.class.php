@@ -36,14 +36,14 @@ class SLIRConfig extends SLIRConfigDefaults
 {
   // override configuration values here
 
-  public static function init()
+  public static function init($path)
   {
     // This must be the last line of this function
-    parent::init();
+    parent::init($path);
   }
   
-  public static $documentRoot = "/home/PATH/TO/ROOT";
+  //public static $documentRoot = "/home/staging/public_html/imageCache";
   
 }
 
-SLIRConfig::init();
+SLIRConfig::init($path);

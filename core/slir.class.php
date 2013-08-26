@@ -536,6 +536,7 @@ class SLIR
    */
   final public function getConfig()
   {
+    global $path;
     require_once $this->getConfigPath();
   }
 

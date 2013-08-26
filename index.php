@@ -24,6 +24,16 @@
  */
 
 // define('SLIR_CONFIG_FILENAME', 'slir-config-alternate.php');
+$serverName = $_SERVER["SERVER_NAME"];
+$domain = substr($serverName, 0, strpos($serverName, "."));
+// echo $domain;
+
+if ($_GET["domain"] == "penrite") {
+  $path = "/home/staging/public_html/imageCache";
+}
+elseif ($_GET["domain"]=="seldex") {
+  $path="/home/staging/public_html/imageCacheSeldex";
+}
 
 require_once 'core/slir.class.php';
 $slir = new SLIR();

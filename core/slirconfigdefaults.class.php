@@ -120,7 +120,7 @@ class SLIRConfigDefaults
    * @since 2.0
    * @var string
    */
-  public static $documentRoot = "/home/staging/public_html";
+  public static $documentRoot = "";
 
   /**
    * Absolute path to SLIR (no trailing slash) from the root directory on your server's filesystem.
@@ -203,27 +203,30 @@ class SLIRConfigDefaults
    * @since 2.0
    * @return void
    */
-  public static function init()
+  public static function init($path)
   {
     if (!defined('__DIR__')) {
       define('__DIR__', dirname(__FILE__));
     }
 
-    if (self::$documentRoot === null) {
-      self::$documentRoot = rtrim(realpath(preg_replace('`' . preg_quote($_SERVER['PHP_SELF']) . '$`', '', $_SERVER['SCRIPT_FILENAME'])), '/');
-    }
+//    if (self::$documentRoot === null) {
+//      self::$documentRoot = rtrim(realpath(preg_replace('`' . preg_quote($_SERVER['PHP_SELF']) . '$`', '', $_SERVER['SCRIPT_FILENAME'])), '/');
+//    }
+    self::$documentRoot = $path;
 
     if (self::$pathToSLIR === null) {
       self::$pathToSLIR = realpath(__DIR__ . '/../');
     }
 
-    if (self::$pathToCacheDir === null) {
-      self::$pathToCacheDir = self::$pathToSLIR . '/cache';
-    }
+//    if (self::$pathToCacheDir === null) {
+//      self::$pathToCacheDir = self::$pathToSLIR . '/cache';
+//    }
+    self::$pathToCacheDir = $path . '/cache';
 
-    if (self::$pathToErrorLog === null) {
-      self::$pathToErrorLog = self::$pathToSLIR . '/slir-error-log';
-    }
+//    if (self::$pathToErrorLog === null) {
+//      self::$pathToErrorLog = self::$pathToSLIR . '/slir-error-log';
+//    }
+    self::$pathToErrorLog = $path . '/slir-error-log';
   }
 
 }
