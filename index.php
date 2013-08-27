@@ -26,15 +26,20 @@
 // define('SLIR_CONFIG_FILENAME', 'slir-config-alternate.php');
 $serverName = $_SERVER["SERVER_NAME"];
 $domain = substr($serverName, 0, strpos($serverName, "."));
-// echo $domain;
 
-if ($_GET["domain"] == "penrite") {
-  $path = "/home/staging/public_html/imageCache";
+if ($domain == "penrite") {
+  	$path = "/home/imageCache/public_html/penrite";
 }
-elseif ($_GET["domain"]=="seldex") {
-  $path="/home/staging/public_html/imageCacheSeldex";
+if ($domain=="seldex") {
+  $path="/home/imageCache/public_html/seldex";
 }
-
+if ($domain=="adhesivetapes") {
+  $path="/home/imageCache/public_html/adhesivetapes";
+}
+if ($path==""){
+	header("HTTP/1.0 404 Not Found");
+	die;
+}
 require_once 'core/slir.class.php';
 $slir = new SLIR();
 $slir->processRequestFromURL();
