@@ -29,7 +29,7 @@ include 'domains.php';
 $serverName = $_SERVER["SERVER_NAME"];
 $domain = substr($serverName, 0, strpos($serverName, "."));
 
-$path = $domain_paths[$domain];
+$path = $domain_paths[$domain]["path"];
 if ($path == ""){
 	header("HTTP/1.0 404 Not Found");
 	die;
