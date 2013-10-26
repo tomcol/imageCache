@@ -24,6 +24,16 @@
  */
 
 // define('SLIR_CONFIG_FILENAME', 'slir-config-alternate.php');
+include 'domains.php';
+
+$serverName = $_SERVER["SERVER_NAME"];
+$domain = substr($serverName, 0, strpos($serverName, "."));
+
+$path = $domain_paths[$domain]["path"];
+if ($path == ""){
+	header("HTTP/1.0 404 Not Found");
+	die;
+}
 
 require_once 'core/slir.class.php';
 $slir = new SLIR();
