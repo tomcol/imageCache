@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors',true);
+echo "BLAH";
 /**
  * Main file for SLIR (Smart Lencioni Image Resizer)
  *
@@ -30,6 +32,7 @@ $serverName = $_SERVER["SERVER_NAME"];
 $domain = substr($serverName, 0, strpos($serverName, "."));
 
 $path = $domain_paths[$domain]["path"];
+$path="/usr/share/nginx/www/";
 if ($path == ""){
 	header("HTTP/1.0 404 Not Found");
 	die;

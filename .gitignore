@@ -16,7 +16,14 @@ cache/rendered/*
 *.project
 *.DS_Store
 Thumbs.db
-
-
+originals/*
+w100/*
 
 .buildpath
+
+w150/originals/*
+
+w200-c3:2/*
+
+w500-c2:2/*
+w500-c3:2/*
