@@ -336,6 +336,7 @@ class SLIRRequest
 
     // The parameters should be the first set of characters after the SLIR path
     $request    = preg_replace('`.*?/' . preg_quote(basename(SLIRConfig::$pathToSLIR)) . '/`', '', (string) $_SERVER['REQUEST_URI'], 1);
+    echo $request;
     $paramString  = strtok($request, '/');
 
     if ($paramString === false || $paramString === $request) {
