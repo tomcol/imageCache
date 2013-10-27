@@ -26,14 +26,9 @@ server {
 
         # Make site accessible from http://localhost/
         server_name 192.168.56.1;
-        location ~ ^/cache/(.*)/(.*)
+        location /
         {
                 try_files $uri @resize;
-                add_header Cache-Control public;
-                expires 1y;
-                log_not_found off;
-        }
-        location / {
                 add_header Cache-Control public;
                 expires 1y;
                 log_not_found off;
@@ -47,7 +42,7 @@ server {
         }
 
         location @resize {
-                rewrite ^/cache/(.*)/(.*) /resize.php?dir=$1&path=$2;
+                rewrite . /index.php;
                 include /etc/nginx/fastcgi_params;
                 fastcgi_pass 127.0.0.1:9000;
         }
